@@ -2,7 +2,7 @@ console.log("script.js connected!");
 
 // ---- Step 7: Fetch gifs and store original URLs in an images array ----
 
-// Your Giphy API key
+// Giphy API key
 const API_KEY = "UjkAjqX9VxaSLRy3KFXlSj5Q6h39h7hk";
 
 // This will hold the list of image URLs
@@ -21,10 +21,10 @@ async function fetchGifs(searchTerm = "dogs") {
     const response = await fetch(endpoint);
     const data = await response.json();
 
-    // Pull out the original image URLs and store them in the images array
+    // Pulls out the original image URLs and store them in the images array
     images = data.data.map(gif => gif.images.original.url);
 
-    // Preview data in the console (Step 7 requirement)
+    // Preview data in the console
     console.log("Fetched images:", images);
   } catch (error) {
     console.error("Error fetching gifs:", error);
@@ -37,7 +37,7 @@ async function fetchGifs(searchTerm = "dogs") {
 const gifContainer = document.querySelector("#gif-container");
 const fetchButton = document.querySelector("#fetch-gif-btn");
 
-// Extra credit: search input (uncommented in index.html)
+// Extra credit: search input 
 const searchInput = document.querySelector("#search-input");
 
 // c. Attach an event listener to the button
